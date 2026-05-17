@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { products } from "@/lib/site";
-import { ArrowRight, Check, Download, Gauge, Ruler, Layers } from "lucide-react";
+import { ArrowRight, Check, Download, Gauge, Ruler } from "lucide-react";
 import tabletop from "@/assets/product-tabletop.jpg";
 import portable from "@/assets/product-portable.jpg";
 import platform from "@/assets/product-platform.jpg";
@@ -25,12 +25,17 @@ const descKey: Record<string, string> = {
   "4-load-cell-platform-scale": "prod.loadcell.desc",
 };
 
-function ProductRow({ p, index }: { p: (typeof products)[number]; index: number }) {
+type ExtendedProduct = (typeof products)[number] & {
+  capacities?: readonly string[];
+  accuracies?: readonly string[];
+  catalog?: string;
+};
+
+function ProductRow({ p, index }: { p: ExtendedProduct; index: number }) {
   const t = useTranslations();
   const reverse = index % 2 === 1;
-  const capacities = (p as any).capacities as readonly string[] | undefined;
-  const accuracies = (p as any).accuracies as readonly string[] | undefined;
-  const materials = (p as any).materials as readonly string[] | undefined;
+  const capacities = p.capacities;
+  const accuracies = p.accuracies;
 
   const enquireUrl = `https://wa.me/91${site.phone}?text=${encodeURIComponent(
     `Hi Jioo Weighing System, I'd like to enquire about the ${t(nameKey[p.slug])}.`
@@ -112,7 +117,7 @@ function ProductRow({ p, index }: { p: (typeof products)[number]; index: number 
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href={(p as any).catalog ?? site.catalogUrl} download target="_blank" rel="noopener noreferrer">
+              <a href={p.catalog ?? site.catalogUrl} download target="_blank" rel="noopener noreferrer">
                 <Download className="mr-2 h-4 w-4" /> {t("prod.downloadCatalog")}
               </a>
             </Button>
@@ -138,7 +143,7 @@ export function ProductGrid({ heading = true }: { heading?: boolean }) {
 
         <div className="mt-12 space-y-8">
           {products.map((p, i) => (
-            <ProductRow key={p.slug} p={p} index={i} />
+            <ProductRow key={p.slug} p={p as ExtendedProduct} index={i} />
           ))}
         </div>
       </div>

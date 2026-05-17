@@ -5,9 +5,6 @@ import {
   ArrowRight,
   MessageCircle,
   Phone,
-  Sparkles,
-  ShieldCheck,
-  Cpu,
 } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import heroBg from '@/assets/hero-bg.jpg'

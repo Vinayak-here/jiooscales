@@ -228,10 +228,13 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("en");
 
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem("lang") as Lang | null;
-      if (saved && dicts[saved]) setLangState(saved);
-    } catch {}
+    const id = setTimeout(() => {
+      try {
+        const saved = localStorage.getItem("lang") as Lang | null;
+        if (saved && dicts[saved]) setLangState(saved);
+      } catch {}
+    }, 0);
+    return () => clearTimeout(id);
   }, []);
 
   const setLang = (l: Lang) => {

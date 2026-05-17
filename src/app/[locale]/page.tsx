@@ -4,7 +4,6 @@ import { ProductGrid } from '@/components/sections/product-grid'
 import { WhyChoose } from '@/components/sections/why-choose'
 import { Testimonials } from '@/components/sections/testimonials'
 import { WhatsAppCTA } from '@/components/sections/whatsapp-cta'
-import { ContactSection } from '@/components/sections/contact-section'
 
 export default function HomePage() {
   return (

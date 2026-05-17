@@ -26,7 +26,7 @@ export function Testimonials() {
                 <div className="flex gap-0.5 text-[var(--cyan)]">
                   {Array.from({ length: 5 }).map((_, k) => <Star key={k} className="h-4 w-4 fill-current" />)}
                 </div>
-                <p className="mt-4 text-sm text-foreground/90">"{t.text}"</p>
+                <p className="mt-4 text-sm text-foreground/90">&ldquo;{t.text}&rdquo;</p>
                 <div className="mt-6 flex items-center gap-3">
                   <div className="grid h-10 w-10 place-items-center rounded-full gradient-brand font-semibold text-white">
                     {t.name.charAt(0)}
