@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "contact": "Contact"
+  },
+  "cta": {
+    "viewProducts": "View Products",
+    "contactUs": "Contact Us",
+    "whatsapp": "WhatsApp Inquiry",
+    "chatWhatsapp": "Chat on WhatsApp",
+    "enquire": "Enquire",
+    "need": {
+      "title": "Need a weighing solution?",
+      "sub": "Contact us instantly on WhatsApp — quick quotes, friendly advice."
+    }
+  },
+  "hero": {
+    "badge": "Trusted Weighing Solutions · Tumkur, Karnataka",
+    "title1": "Precision Weighing,",
+    "title2": "Engineered for Trust",
+    "subtitle": "Complete Weighing Solution for Retail, Dairy & Industrial Segments. Durable build and unmatched accuracy for retail, industrial, dairy and commercial use.",
+    "f1": "High Accuracy",
+    "f2": "Advanced Tech",
+    "f3": "Built to Last"
+  },
+  "about": {
+    "kicker": "About us",
+    "title1": "Built on",
+    "title2": "accuracy",
+    "title3": ", driven by trust.",
+    "p1": "Siddarama Tech Solution is a Tumkur-based provider of premium weighing systems under the Jioo brand. We operate across Karnataka and serve customers all over India through our dealer network — supplying advanced scales for retail, dairy, industrial and commercial operations.",
+    "p2": "Every product we ship is tested for precision, calibrated for real-world conditions, and backed by hands-on service from our team."
+  },
+  "stat": {
+    "delivered": "Reliable Products Delivered",
+    "customers": "Happy Customers",
+    "accuracy": "Weighing Accuracy",
+    "support": "Customer Support"
+  },
+  "prod": {
+    "kicker": "Our Products",
+    "title": "A weighing system for every need",
+    "subtitle": "From compact counter scales to heavy-duty 4 load cell platforms — premium build, dependable accuracy.",
+    "capacity": "Capacity",
+    "accuracy": "Accuracy",
+    "tabletop": {
+      "name": "Tabletop Scale",
+      "desc": "Compact, accurate counter scale ideal for retail counters, jewellery and small parcels."
+    },
+    "portable": {
+      "name": "Portable Scale",
+      "desc": "Take-anywhere precision for couriers, farmers and on-site weighing."
+    },
+    "platform": {
+      "name": "Platform Scale",
+      "desc": "Workhorse platform scale built for warehouses, mandis and shop floors."
+    },
+    "loadcell": {
+      "name": "4 Load Cell Platform Scale",
+      "desc": "Precision-engineered industrial scale for heavy loads, drums and pallets."
+    },
+    "material": "Top Plate",
+    "downloadCatalog": "Download Catalog"
+  },
+  "why": {
+    "kicker": "Why choose us",
+    "title": "Engineered for performance. Delivered with care.",
+    "f1": {
+      "t": "High Accuracy & Reliability",
+      "d": "Calibrated precision you can trust on every weighing — verified before dispatch."
+    },
+    "f2": {
+      "t": "Durable & Long-Lasting",
+      "d": "Heavy-duty builds engineered for retail, industrial and outdoor use."
+    },
+    "f3": {
+      "t": "Advanced Technology",
+      "d": "Modern load cells, bright displays and smart connectivity options."
+    },
+    "f4": {
+      "t": "Competitive Pricing",
+      "d": "Straightforward pricing with no surprises — premium quality, fair value."
+    },
+    "f5": {
+      "t": "Customer-Centric Support",
+      "d": "Friendly service from a Karnataka-based team that picks up the phone."
+    }
+  },
+  "test": {
+    "kicker": "Testimonials",
+    "title": "Trusted by businesses across Karnataka"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Let's find the right scale for you",
+    "sub": "Tell us a bit about your requirement and we'll get back fast.",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Business Hours",
+    "hoursVal": "Mon – Sat · 9:30 AM – 7:30 PM",
+    "form": {
+      "name": "Your Name",
+      "namePh": "Full name",
+      "phone": "Phone",
+      "phonePh": "Mobile number",
+      "email": "Email",
+      "message": "Message",
+      "messagePh": "Tell us what you're looking for…",
+      "send": "Send Enquiry",
+      "sending": "Sending…"
+    },
+    "toast": "Opening WhatsApp to send your enquiry…"
+  },
+  "footer": {
+    "quick": "Quick Links",
+    "contact": "Contact",
+    "follow": "Follow",
+    "hours": "Business hours",
+    "hoursVal": "Mon – Sat · 9:30 AM – 7:30 PM",
+    "rights": "All rights reserved.",
+    "tagline": "Complete Weighing Solution for Retail, Dairy & Industrial Segments"
+  },
+  "aboutPage": {
+    "kicker": "Our story",
+    "title1": "Precision is a",
+    "title2": "promise we keep",
+    "sub": "From a small workshop in Tumkur to weighing partner for hundreds of businesses across Karnataka — built on trust, service and engineering excellence."
+  },
+  "prodPage": {
+    "kicker": "Our range",
+    "title1": "Weighing systems for",
+    "title2": "every workflow",
+    "sub": "From counter-top retail scales to heavy-duty industrial platforms — pick the model that fits your operation."
+  },
+  "contactPage": {
+    "kicker": "Contact us",
+    "title1": "We're here to",
+    "title2": "help",
+    "sub": "Reach out by phone, WhatsApp or email — we respond fast."
+  },
+  "lang": {
+    "label": "Language"
+  }
+}

@@ -1,12 +1,27 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+/* @import "tw-animate-css"; */
+/* @import "shadcn/tailwind.css"; */
+
+@font-face {
+  font-family: "Inter-Local";
+  src: url("../assets/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 1000;
+}
+
+@font-face {
+  font-family: "Sora-Local";
+  src: url("../assets/fonts/Sora-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 1000;
+}
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-heading: var(--font-sans);
-    --font-sans: var(--font-sans);
+    --font-inter: "Inter-Local", sans-serif;
+    --font-sora: "Sora-Local", sans-serif;
+    --font-heading: var(--font-sora);
+    --font-display: var(--font-sora);
+    --font-sans: var(--font-inter);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -119,11 +134,14 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
   body {
     @apply bg-background text-foreground;
-    }
+  }
   html {
     @apply font-sans;
-    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
 }
