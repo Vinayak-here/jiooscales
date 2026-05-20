@@ -9,7 +9,6 @@ export function WhyChoose() {
     { icon: Shield, title: t("why.f2.t"), desc: t("why.f2.d") },
     { icon: Cpu, title: t("why.f3.t"), desc: t("why.f3.d") },
     { icon: Tags, title: t("why.f4.t"), desc: t("why.f4.d") },
-    { icon: Headset, title: t("why.f5.t"), desc: t("why.f5.d") },
   ];
 
   return (
@@ -24,7 +23,7 @@ export function WhyChoose() {
           {features.map((f, i) => (
             <Reveal key={f.title} delay={i * 0.08}>
               <div className="group h-full rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition hover:shadow-md">
-                <div className="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-sm transition group-hover:scale-105">
+                <div className="grid h-12 w-12 place-items-center rounded-full bg-linear-to-r from-blue-600 to-cyan-500 text-white shadow-sm transition group-hover:scale-105">
                   <f.icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-6 font-display text-lg font-bold text-slate-900">{f.title}</h3>
