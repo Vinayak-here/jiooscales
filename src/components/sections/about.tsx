@@ -22,8 +22,8 @@ function Counter({ to, suffix = "", decimals = 0 }: { to: number; suffix?: strin
 export function About() {
   const t = useTranslations();
   const stats = [
-    { icon: Award, value: 500, suffix: "+", decimals: 0, label: t("stat.delivered") },
-    { icon: Users, value: 10000, suffix: "+", decimals: 0, label: t("stat.customers") },
+    { icon: Award, value: 10000, suffix: "+", decimals: 0, label: t("stat.delivered") },
+    { icon: Users, value: 100, suffix: "+", decimals: 0, label: t("stat.customers") },
     { icon: Target, value: 99.9, suffix: "%", decimals: 1, label: t("stat.accuracy") },
     { icon: IndianRupee, value: 24, suffix: "/7", decimals: 0, label: t("stat.support") },
   ];

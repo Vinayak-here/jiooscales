@@ -78,7 +78,7 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div>
+        {/* <div>
           <h4 className="mb-4 text-sm font-semibold tracking-wider text-white/80 uppercase">
             {t('follow')}
           </h4>
@@ -93,13 +93,13 @@ export function SiteFooter() {
                 <Icon className="h-4 w-4" />
               </a>
             ))}
-          </div>
+          </div> */}
           <p className="mt-6 text-xs text-white/50">
             {t('hours')}
             <br />
             {t('hoursVal')}
           </p>
-        </div>
+        {/* </div> */}
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-5 text-center text-xs text-white/50 md:px-6">

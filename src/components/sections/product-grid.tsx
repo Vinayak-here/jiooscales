@@ -29,13 +29,14 @@ type ExtendedProduct = (typeof products)[number] & {
   capacities?: readonly string[];
   accuracies?: readonly string[];
   catalog?: string;
+  models?: readonly { size: string; capacity: string; accuracy: string }[];
+  model?: string;
+  sizeLabel?: string;
 };
 
 function ProductRow({ p, index }: { p: ExtendedProduct; index: number }) {
   const t = useTranslations();
   const reverse = index % 2 === 1;
-  const capacities = p.capacities;
-  const accuracies = p.accuracies;
 
   const enquireUrl = `https://wa.me/91${site.phone}?text=${encodeURIComponent(
     `Hi Jioo Weighing System, I'd like to enquire about the ${t(nameKey[p.slug])}.`
@@ -63,48 +64,42 @@ function ProductRow({ p, index }: { p: ExtendedProduct; index: number }) {
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--royal)]">
             0{index + 1} · Jioo Series
           </span>
-          <h3 className="mt-2 font-display text-2xl font-bold md:text-3xl">{t(nameKey[p.slug])}</h3>
+          <h3 className="mt-2 font-display text-2xl font-bold md:text-3xl flex flex-wrap items-center gap-3">
+            {t(nameKey[p.slug])}
+            {p.model && (
+              <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 font-sans text-xs font-bold tracking-widest text-blue-700 border border-blue-200 shadow-sm uppercase mt-1">
+                {p.model}
+              </span>
+            )}
+          </h3>
           <p className="mt-3 text-muted-foreground">{t(descKey[p.slug])}</p>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {/* Capacity Box */}
-            <div className="rounded-3xl border border-blue-100 bg-blue-50/30 p-5">
-              <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-blue-700">
-                <Ruler className="h-4 w-4 text-blue-600" /> {t("prod.capacity")}
-              </div>
-              <ul className="mt-4 flex flex-col gap-2">
-                {(capacities ?? [p.capacity]).map((c) => (
-                  <li
-                    key={c}
-                    className="w-full rounded-xl border border-blue-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm text-center"
-                  >
-                    {c}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Accuracy Box */}
-            <div className="rounded-3xl border border-cyan-100 bg-cyan-50/30 p-5">
-              <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-cyan-700">
-                <Gauge className="h-4 w-4 text-cyan-500" /> {t("prod.accuracy")}
-              </div>
-              <ul className="mt-4 flex flex-col gap-2">
-                {(accuracies ?? [p.accuracy]).map((a) => (
-                  <li
-                    key={a}
-                    className="w-full rounded-xl border border-cyan-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm text-center"
-                  >
-                    {a}
-                  </li>
-                ))}
-              </ul>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-slate-50 text-slate-600 border-b border-slate-200">
+                  <tr>
+                    <th className="px-4 py-3 font-semibold whitespace-nowrap">{p.sizeLabel || t("prod.panSize", { fallback: "Pan Size" })}</th>
+                    <th className="px-4 py-3 font-semibold whitespace-nowrap">{t("prod.capacity")}</th>
+                    <th className="px-4 py-3 font-semibold whitespace-nowrap">{t("prod.accuracy")}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {p.models?.map((m, i) => (
+                    <tr key={i} className="hover:bg-slate-50/50 transition-colors">
+                      <td className="px-4 py-3 text-slate-900 font-medium">{m.size}</td>
+                      <td className="px-4 py-3 text-slate-600">{m.capacity}</td>
+                      <td className="px-4 py-3 text-slate-600">{m.accuracy}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
 
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {p.features.map((f) => (
-              <li key={f} className="flex items-start gap-2 text-sm text-slate-600">
+            {p.features.map((f, i) => (
+              <li key={`${p.slug}-feature-${i}`} className="flex items-start gap-2 text-sm text-slate-600">
                 <Check className="mt-0.5 h-4 w-4 flex-none text-cyan-500" /> {f}
               </li>
             ))}

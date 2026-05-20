@@ -1,11 +1,12 @@
 import { useTranslations } from "next-intl";
 import { About } from "@/components/sections/about";
+import { WhyChoose } from "@/components/sections/why-choose";
 import { Reveal } from "@/components/reveal";
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Us | JIOO Weighing Systems',
-  description: 'Learn about Siddarama Tech Solution and JIOO Weighing Systems — trusted industrial weighing solutions across South India.',
+  title: 'About | JIOO Weighing Systems',
+  description: 'Our story, values and the people behind Jioo Weighing Systems.',
 }
 
 export default function AboutPage() {
@@ -28,6 +29,7 @@ export default function AboutPage() {
         </div>
       </section>
       <About />
+      <WhyChoose />
     </>
   );
 }
