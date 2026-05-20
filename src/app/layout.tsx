@@ -4,6 +4,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'JIOO Weighing System',
   description: 'Industrial & commercial weighing systems built for accuracy.',
+  icons: {
+    icon: '/Icongradientfavicon',
+  },
 }
 
 export default function RootLayout({
