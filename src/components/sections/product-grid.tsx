@@ -2,10 +2,10 @@ import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { products } from "@/lib/site";
 import { ArrowRight, Check, Download, Gauge, Ruler } from "lucide-react";
-import tabletop from "@/assets/product-tabletop.jpg";
-import portable from "@/assets/product-portable.jpg";
-import platform from "@/assets/product-platform.jpg";
-import loadcell from "@/assets/product-4loadcell.jpg";
+import tabletop from "@/assets/TableTopScalepng1.png";
+import portable from "@/assets/PortableScalepng1.png";
+import platform from "@/assets/PlatformScalepng1.png";
+import loadcell from "@/assets/LoadCellPlatformScalepng1.png";
 import { site } from "@/lib/site";
 import { useTranslations } from "next-intl";
 import Image, { type StaticImageData } from "next/image";
@@ -49,11 +49,11 @@ function ProductRow({ p, index }: { p: ExtendedProduct; index: number }) {
           reverse ? "lg:[&>div:first-child]:order-2" : ""
         }`}
       >
-        <div className="relative overflow-hidden rounded-2xl bg-secondary">
+        <div className="relative overflow-hidden rounded-2xl bg-white flex items-center justify-center">
           <Image
             src={imgs[p.image]}
             alt={t(nameKey[p.slug])}
-            className="aspect-[4/3] h-full w-full object-cover transition duration-700 hover:scale-105"
+            className="aspect-[4/3] h-full w-full object-contain transition duration-700 hover:scale-105"
           />
           <div className="absolute left-4 top-4 rounded-full glass-light px-3 py-1 text-[11px] font-semibold text-foreground">
             Jioo

@@ -1,16 +1,24 @@
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { About } from "@/components/sections/about";
 import { WhyChoose } from "@/components/sections/why-choose";
 import { Reveal } from "@/components/reveal";
+import { locales } from '@/i18n/config'
 import type { Metadata } from 'next'
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
+}
 
 export const metadata: Metadata = {
   title: 'About | JIOO Weighing Systems',
   description: 'Our story, values and the people behind Jioo Weighing Systems.',
 }
 
-export default function AboutPage() {
-  const t = useTranslations("aboutPage");
+export default async function AboutPage({ params }: { params: { locale: string } }) {
+  const { locale } = params
+  setRequestLocale(locale)
+  
+  const t = await getTranslations("aboutPage");
 
   return (
     <>

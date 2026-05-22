@@ -1,15 +1,23 @@
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { ProductGrid } from "@/components/sections/product-grid";
 import { Reveal } from "@/components/reveal";
+import { locales } from '@/i18n/config'
 import type { Metadata } from 'next'
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
+}
 
 export const metadata: Metadata = {
   title: 'Products | JIOO Weighing Systems',
   description: 'Explore our full range of industrial and commercial weighing scales — built for accuracy and durability.',
 }
 
-export default function ProductsPage() {
-  const t = useTranslations("prodPage");
+export default async function ProductsPage({ params }: { params: { locale: string } }) {
+  const { locale } = params
+  setRequestLocale(locale)
+  
+  const t = await getTranslations("prodPage");
 
   return (
     <>

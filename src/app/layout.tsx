@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'JIOO Weighing System',
   description: 'Industrial & commercial weighing systems built for accuracy.',
   icons: {
-    icon: '/Icongradientfavicon',
+    icon: '/icon-gradient-favicon.svg',
   },
 }
 
